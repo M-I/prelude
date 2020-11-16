@@ -1,14 +1,14 @@
 install_prelude () {
-    printf " Cloning Emacs Prelude's GitHub repository...\n$RESET"
+    printf " Cloning Elegant Prelude's GitHub repository...\n$RESET"
     if [ x$PRELUDE_VERBOSE != x ]
     then
-        /usr/bin/env git clone $PRELUDE_URL "$PRELUDE_INSTALL_DIR"
+        /usr/bin/env git clone --recursive $PRELUDE_URL "$PRELUDE_INSTALL_DIR"
     else
-        /usr/bin/env git clone $PRELUDE_URL "$PRELUDE_INSTALL_DIR" > /dev/null
+        /usr/bin/env git clone --recursive $PRELUDE_URL "$PRELUDE_INSTALL_DIR" > /dev/null
     fi
     if ! [ $? -eq 0 ]
     then
-        printf "$RED A fatal error occurred during Prelude's installation. Aborting..."
+        printf "$RED A fatal error occurred during Elegant Prelude's installation. Aborting..."
         exit 1
     fi
 }
@@ -125,7 +125,7 @@ done
 
 VERBOSE_COLOR=$BBLUE
 
-[ -z "$PRELUDE_URL" ] && PRELUDE_URL="https://github.com/bbatsov/prelude.git"
+[ -z "$PRELUDE_URL" ] && PRELUDE_URL="https://github.com/m-i/prelude.git"
 [ -z "$PRELUDE_INSTALL_DIR" ] && PRELUDE_INSTALL_DIR="$HOME/.emacs.d"
 
 if [ x$PRELUDE_VERBOSE != x ]
@@ -238,10 +238,16 @@ else
 fi
 
 printf "\n"
-printf "$BBLUE  ____           _           _       \n"
-printf "$BBLUE |  _ \ _ __ ___| |_   _  __| | ___  \n"
-printf "$BBLUE | |_) |  __/ _ \ | | | |/ _  |/ _ \ \n"
-printf "$BBLUE |  __/| | |  __/ | |_| | (_| |  __/ \n"
-printf "$BBLUE |_|   |_|  \___|_|\__,_|\__,_|\___| \n\n"
+printf "$BBLUE .____. _                        _     \n"
+printf "$BBLUE |  __|| |                     ,| |_.  \n"
+printf "$BBLUE | |_  | | ___  .___. ____ _,__|_  _|  \n"
+printf "$BBLUE |  _| | |/ _ \/ _  |/ _  |  _  \ |    \n"
+printf "$BBLUE | |___| |  __/\__| | (_| | | | | |__  \n"
+printf "$BBLUE |____/|_|\___| __  /\__,_|_| |_|___/  \n"
+printf "$BBLUE  ____          \__/         _         \n"
+printf "$BBLUE |  _ \ _.__ ___| |_   _. __| | ___    \n"
+printf "$BBLUE | |_) |  __/ _ \ | | | |/ _  |/ _ \   \n"
+printf "$BBLUE |  __/| | |  __/ | |_| | (_| |  __/   \n"
+printf "$BBLUE |_|   |_|  \___|_|\__,_|\__,_|\___|   \n\n"
 printf "$GREEN ... is now installed and ready to do thy bidding, Master $USER!$RESET\n"
 printf "$GREEN Don't forget to adjust the modules you want to use in $PRELUDE_INSTALL_DIR/personal/prelude-modules.el!$RESET\n"
