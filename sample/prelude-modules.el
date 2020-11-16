@@ -39,6 +39,9 @@
 
 ;;; Uncomment the modules you'd like to use and restart Prelude afterwards
 
+;;; Elegance
+(require 'elegant-prelude)
+
 ;;; General productivity tools
 
 ;; (require 'prelude-ido) ;; Supercharges Emacs completion for C-x C-f and more
